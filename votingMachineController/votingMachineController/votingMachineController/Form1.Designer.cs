@@ -47,6 +47,7 @@
             this.btnConnect.TabIndex = 0;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // cbSelectCOM
             // 
@@ -67,10 +68,16 @@
             this.btnSendMessage.TabIndex = 2;
             this.btnSendMessage.Text = "Send";
             this.btnSendMessage.UseVisualStyleBackColor = true;
+            this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
             // timerCOM
             // 
             this.timerCOM.Interval = 1000;
+            this.timerCOM.Tick += new System.EventHandler(this.timerCOM_Tick);
+            // 
+            // serialPort1
+            // 
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // tbSendMessage
             // 
@@ -110,6 +117,7 @@
             this.Controls.Add(this.btnConnect);
             this.Name = "Form1";
             this.Text = "Voting Machine Controller - Disconected";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
