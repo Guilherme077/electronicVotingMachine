@@ -73,6 +73,7 @@ namespace votingMachineController
                 }
                 catch
                 {
+                    tbConsole.AppendText("[Controller] Error: The " + cbSelectCOM.Items[cbSelectCOM.SelectedIndex].ToString() + " port is not availble \n");
                     return;
 
                 }
@@ -80,7 +81,7 @@ namespace votingMachineController
                 {
                     btnConnect.Text = "Disconnect";
                     btnSendMessage.Enabled = true;
-
+                    Form1.ActiveForm.Text = "Voting Machine Controller - Conected";
                 }
             }
             else
@@ -91,6 +92,7 @@ namespace votingMachineController
                     serialPort1.Close();
                     btnConnect.Text = "Connect";
                     btnSendMessage.Enabled = false;
+                    Form1.ActiveForm.Text = "Voting Machine Controller - Disconected";
                 }
                 catch
                 {
@@ -120,6 +122,11 @@ namespace votingMachineController
         private void trataDadoRecebido(object sender, EventArgs e)
         {
             tbConsole.AppendText(RxString);
+        }
+
+        private void tbConsole_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

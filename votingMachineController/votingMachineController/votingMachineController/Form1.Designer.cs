@@ -103,6 +103,7 @@
             this.tbConsole.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbConsole.Size = new System.Drawing.Size(962, 448);
             this.tbConsole.TabIndex = 4;
+            this.tbConsole.TextChanged += new System.EventHandler(this.tbConsole_TextChanged);
             // 
             // Form1
             // 
