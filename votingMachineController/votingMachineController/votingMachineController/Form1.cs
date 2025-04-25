@@ -128,5 +128,17 @@ namespace votingMachineController
         {
 
         }
+
+        private void btnConfirmVoter_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("The Voting Machine will show the vote options. The voter will not be able to vote again in this voting process! Once started, this action cannot be canceled!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+        }
+
+        private void btnStartVoting_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("The Voting Process is being started. If the voting process stop for any reason, the results will be erased from the voting machine unless other Voting Process start with the same Voting Process Code (VPC). Store the VPC in a safe place, no one can continue the Voting Process without the VPC! The VPC will be showed after this message. (function not implemented yet)", "VPC Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           
+
+        }
     }
 }
